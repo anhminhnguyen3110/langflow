@@ -1,0 +1,46 @@
+/* Dark theme scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(0 0% 13%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(0 1% 26%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(0 1% 36%);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(0 1% 26%) hsl(0 0% 13%);
+}
+
+/* Light theme scrollbar override */
+.light ::-webkit-scrollbar-track,
+[data-theme="light"] ::-webkit-scrollbar-track {
+    background: hsl(0 0% 95%);
+}
+
+.light ::-webkit-scrollbar-thumb,
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 80%);
+}
+
+.light ::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+    background: hsl(0 0% 70%);
+}
+
+.light,
+[data-theme="light"] {
+    scrollbar-color: hsl(0 0% 80%) hsl(0 0% 95%);
+}

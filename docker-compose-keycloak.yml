@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0
+    container_name: keycloak
+    environment:
+      # Admin credentials
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin123
+      # Database - using H2 embedded for simplicity
+      KC_DB: dev-mem
+      # Health check
+      KC_HEALTH_ENABLED: "true"
+    ports:
+      - "8080:8080"
+    command:
+      - start-dev
+    networks:
+      - langflow-network
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+    restart: unless-stopped
+
+networks:
+  langflow-network:
+    external: true
+    name: langflow_default
+
+volumes:
+  keycloak_data:
+    driver: local

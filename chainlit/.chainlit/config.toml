@@ -1,0 +1,79 @@
+[project]
+# Whether to enable telemetry (default: true). No personal data is collected.
+enable_telemetry = false
+
+# List of environment variables to be provided by each user to use the app.
+user_env = []
+
+# Duration (in seconds) during which the session is saved when the connection is lost
+session_timeout = 3600
+
+# Duration (in seconds) of the user session expiry
+user_session_timeout = 1296000  # 15 days
+
+# Enable third parties caching (e.g LangChain cache)
+cache = false
+
+# Authorized origins
+allow_origins = ["*"]
+
+[features]
+# Process and display HTML in messages. This can be a security risk
+unsafe_allow_html = false
+
+# Process and display mathematical expressions. This can clash with "$" characters in messages.
+latex = false
+
+# Automatically tag threads with the current chat profile (if a chat profile is used)
+auto_tag_thread = true
+
+# Allow users to edit their own messages
+edit_message = true
+
+# Show the prompt playground
+prompt_playground = false
+
+# Authorize users to spontaneously upload files with messages
+[features.spontaneous_file_upload]
+    enabled = true
+    accept = ["*/*"]
+    max_files = 20
+    max_size_mb = 500
+
+[features.audio]
+    # Sample rate of the audio
+    sample_rate = 24000
+
+[UI]
+# Name of the assistant.
+name = "Claude AI"
+
+# Description of the assistant. This is used for HTML tags.
+description = "Your intelligent AI assistant powered by Langflow"
+
+# Default theme (light or dark)
+default_theme = "dark"
+
+# Layout mode: "default" or "wide"
+# layout = "wide"
+
+# Chain of Thought (CoT) display mode. Can be "hidden", "tool_call" or "full".
+cot = "full"
+
+# Show or hide the readme by default
+show_readme_as_default = false
+
+# Specify a CSS file that can be used to customize the user interface.
+# custom_css = "/public/stylesheet.css"
+
+# Specify a Javascript file that can be used to customize the user interface.
+# custom_js = "/public/custom.js"
+
+# Optional custom links in the header
+# [[UI.header_links]]
+#     name = "GitHub"
+#     icon_url = "https://github.githubassets.com/favicons/favicon.svg"
+#     url = "https://github.com"
+
+[meta]
+generated_by = "2.9.3"
