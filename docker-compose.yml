@@ -13,6 +13,9 @@ services:
       - LANGFLOW_DATABASE_URL=postgresql://langflow:langflow@postgres:5432/langflow
       - LANGFLOW_CONFIG_DIR=/app/config
       - LANGFLOW_SKIP_AUTH_AUTO_LOGIN=true
+      - LANGFUSE_SECRET_KEY="sk-lf-f48b692a-5924-49d9-a207-6b2b945d9413"
+      - LANGFUSE_PUBLIC_KEY="pk-lf-c3d8bbbc-bae6-49c2-9efe-dbc0561bf42d"
+      - LANGFUSE_BASE_URL="https://cloud.langfuse.com"
     volumes:
       - langflow-data:/app/config
 

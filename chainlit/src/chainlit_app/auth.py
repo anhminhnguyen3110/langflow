@@ -4,7 +4,6 @@ from chainlit_app.config import KEYCLOAK_ENABLED
 
 
 def setup_auth():
-    """Setup authentication based on configuration."""
     if KEYCLOAK_ENABLED:
         @cl.oauth_callback
         def oauth_callback(provider_id: str, token: str, raw_user_data: Dict[str, str], default_user: cl.User) -> Optional[cl.User]:
